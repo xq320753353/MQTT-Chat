@@ -24,3 +24,9 @@ msvc {
     QMAKE_CFLAGS += /utf8
     QMAKE_CXXFLAGS += /utf8
 }
+
+unix|win32: LIBS += -L$$PWD/mqtt/lib/x64/ -lpaho-mqtt3a-static  # 异步
+unix|win32: LIBS += -L$$PWD/mqtt/lib/x64/ -lpaho-mqtt3c-static  # 同步
+
+INCLUDEPATH += $$PWD/mqtt/include
+DEPENDPATH += $$PWD/mqtt/include
